@@ -12,3 +12,13 @@ category: misc
 type: Valve
 standard: global
 ---
+For use 1 button for on/off valve you need to add rule in console.
+
+```console
+Rule1 
+on System#Boot do Power1 ON endon
+on Power1#State=0 do Power2 ON endon
+on Power1#State=1 do Power2 OFF endon
+```
+
+Make sure to enable the rule: `rule1 1`
